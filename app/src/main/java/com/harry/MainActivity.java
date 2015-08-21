@@ -19,14 +19,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 
     public void start(View view) {
         intent = new Intent(this, MyService.class);
+        // starting service with startService()
 ////        intent.putExtra("song", "song1");
 //        intent.putExtra("song", "song2");
 //        startService(intent);
-        bindService(intent, serviceConnection, 1);// 1 when service is created and then bound
+
+        // starting service with bindService()
+        bindService(intent, serviceConnection, 1);// 1 when service is already created and then bound
         flag=true;                                // 0 when service is not created and already
     }                                             // created service is used
 
